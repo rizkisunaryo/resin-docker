@@ -1,0 +1,10 @@
+FROM node
+
+ENV RESIN_TOKEN_KEY youcandefineyourown
+EXPOSE 3000
+
+RUN git clone https://github.com/rizkisunaryo/resin-dashboard.git
+WORKDIR /resin-dashboard
+
+RUN npm install
+CMD ["npm", "run", "dev"]

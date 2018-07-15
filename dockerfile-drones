@@ -1,0 +1,9 @@
+FROM node
+
+ENV RESIN_TOKEN_KEY youcandefineyourown
+
+RUN git clone https://github.com/rizkisunaryo/resin-ws-drone.git
+WORKDIR /resin-ws-drone
+
+RUN npm install
+CMD ["node", "executables/drone-simulator.js"]
